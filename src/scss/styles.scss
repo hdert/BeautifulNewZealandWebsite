@@ -1,0 +1,100 @@
+.animheader {
+  width: 100%;
+  height: 306px;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  overflow: hidden;
+  background: url("../img/sky.jpg");
+  animation: clouds_anim 75s linear infinite;
+}
+
+@keyframes clouds_anim {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position-x: -1200px;
+  }
+}
+
+html {
+  background: #344f59;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  background: #7b9aa6;
+}
+
+nav {
+  overflow: hidden;
+  background-color: #598234;
+  margin-top: 0px;
+}
+
+nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 16px;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+nav a:hover {
+  background-color: #aebd38;
+  color: black;
+}
+
+nav a.active {
+  background-color: #505160;
+  color: white;
+}
+
+/*Position the landscape banner image in the header*/
+.headerimage {
+  position: relative;
+  left: 0;
+}
+
+.logo {
+  z-index: 1;
+  position: absolute;
+  width: 5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: " Serif", serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 1em;
+  width: 100%;
+  text-align: justify;
+  margin-top: 0;
+  padding: 0px;
+}
+
+footer {
+  position: relative;
+  padding-top: 10px;
+  background-color: #505160;
+  /*    clear: both;*/
+}
+
+footer p {
+  text-align: center;
+  color: #68829e;
+}
