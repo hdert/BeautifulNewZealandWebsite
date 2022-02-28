@@ -1,3 +1,24 @@
+mixin formInput(codeName, FrontEndName, placeholder, type, required)
+  if required == true
+    .mb-3.form-floating
+      input.form-control(
+        id=codeName,
+        name=codeName,
+        type=type,
+        placeholder=placeholder,
+        required
+      )
+      label.form-label(for=codeName)= FrontEndName
+  else
+    .mb-3.form-floating
+      input.form-control(
+        id=codeName,
+        name=codeName,
+        type=type,
+        placeholder=placeholder
+      )
+      label.form-label(for=codeName)= FrontEndName
+
 doctype html
 html(lang="en")
   include ../includes/head.pug
@@ -10,44 +31,11 @@ html(lang="en")
       p Please leave us your comments or questions about Beautiful New Zealand.
       #formContainer.d-flex.justify-content-center
         form.col-8(onsubmit="return false")
-          .mb-3.form-floating
-            input#firstname.form-control(
-              name="firstname",
-              type="text",
-              placeholder="Joe",
-              required
-            )
-            label.form-label(for="firstname") First Name
-          .mb-3.form-floating
-            input#lastname.form-control(
-              name="lastname",
-              type="text",
-              placeholder="Smith",
-              required
-            )
-            label.form-label(for="lastname") Last Name
-          .mb-3.form-floating
-            input#email.form-control(
-              name="email",
-              type="email",
-              placeholder="joesmith@example.com",
-              required
-            )
-            label.form-label(for="email") Email
-          .mb-3.form-floating
-            input#phonenum.form-control(
-              name="phonenum",
-              type="tel",
-              placeholder="027123456789"
-            )
-            label.form-label(for="phonenum") Phone Number
-          .mb-3.form-floating
-            input#dateofbirth.form-control(
-              name="dateofbirth",
-              type="date",
-              placeholder="2000-01-01"
-            )
-            label.form-label(for="dateofbirth") Date of Birth
+          +formInput("firstname", "First Name", "Joe", "text", true)
+          +formInput("lastname", "Last Name", "Smith", "text", true)
+          +formInput("email", "Email", "joesmith@example.com", "email", true)
+          +formInput("phonenum", "Phone Number", "027123456789", "tel", false)
+          +formInput("dateofbirth", "Date of Birth", "2000-01-01", "date", false)
           .mb-3.form-floating 
             textarea#message.form-control(
               name="message",
