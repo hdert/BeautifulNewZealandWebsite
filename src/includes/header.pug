@@ -5,15 +5,19 @@ mixin nav-link(page, activePage, pageName)
     a.rounded.me-2(href=page + ".pug")= pageName
 
 mixin header(activePage)
-  header.animheader
+  header.animheader.position-relative
     a(href="index.pug")
-      img.logo(src="../img/NewZealandLogo.png", alt="New Zealand logo")
+      img.logo.h-25.mt-5.ms-2(
+        src="../img/NewZealandLogo.png",
+        alt="New Zealand logo"
+      )
     img(
       src="../img/landscape_banner.png",
       alt="Beautiful New Zealand",
       width="1200",
       height="306"
     )
+    h1.position-absolute.bottom-0.start-50.translate-middle-x.text-white.text-center.px-5.py-2 Beautiful New Zealand
 
   nav.container-fluid.navbar.navbar-expand-md.d-flex.justify-content-between.align-items-center.navbar-dark.sticky-top
     button.navbar-toggler(
