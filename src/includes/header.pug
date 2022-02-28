@@ -1,0 +1,42 @@
+mixin nav-link(page, activePage, pageName)
+  if page === activePage
+    a.active.rounded.me-2(href=page + ".pug", aria-current="page")= pageName
+  else
+    a.rounded.me-2(href=page + ".pug")= pageName
+
+mixin header(activePage)
+  header.animheader
+    a(href="index.pug")
+      img.logo(src="../img/NewZealandLogo.png", alt="New Zealand logo")
+    img(
+      src="../img/landscape_banner.png",
+      alt="Beautiful New Zealand",
+      width="1200",
+      height="306"
+    )
+
+  nav.container-fluid.navbar.navbar-expand-md.d-flex.justify-content-between.align-items-center.navbar-dark
+    button.navbar-toggler(
+      type="button",
+      data-bs-toggle="collapse",
+      data-bs-target="#navbarContent",
+      aria-controls="navbarContent",
+      aria-label="Toggle Drop-Down Navigation",
+      aria-expanded="false"
+    )
+      span.navbar-toggler-icon
+    #navbarContent.collapse.navbar-collapse
+      .navbar-nav
+        +nav-link("#", activePage, "Beaches")
+        +nav-link("#", activePage, "Bush")
+        +nav-link("#", activePage, "Mountains")
+        +nav-link("icons", activePage, "Icons")
+        +nav-link("contact", activePage, "Contact")
+    .search-box.mw-100.d-flex.align-content-center
+      input.p-1.border-0.rounded.me-1.col-9(
+        type="text",
+        placeholder="Search …",
+        name="search"
+      )
+      button.btn.btn-secondary.col-3(aria-label="Search", type="submit")
+        i.bi-search(aria-hidden="true")
