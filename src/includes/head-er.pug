@@ -1,8 +1,8 @@
 mixin nav-link(page, activePage, pageName)
   if page === activePage
-    a.active(href=page + ".pug", aria-current="page")= pageName
+    a.active.rounded.me-2(href=page + ".pug", aria-current="page")= pageName
   else
-    a(href=page + ".pug")= pageName
+    a.rounded.me-2(href=page + ".pug")= pageName
 
 mixin header(activePage)
   head
@@ -26,7 +26,7 @@ mixin header(activePage)
         height="306"
       )
 
-    nav.container-fluid.navbar.navbar-expand-xxl.d-flex.justify-content-between.align-items-center
+    nav.container-fluid.navbar.navbar-expand-xxl.d-flex.justify-content-between.align-items-center.navbar-dark
       button.navbar-toggler(
         type="button",
         data-bs-toggle="collapse",
@@ -43,12 +43,11 @@ mixin header(activePage)
           +nav-link("#", activePage, "Mountains")
           +nav-link("icons", activePage, "Icons")
           +nav-link("contact", activePage, "Contact")
-      if activePage === "icons"
-        .search-box
-          input.p-1.mt-1.border-0.rounded.me-1(
-            type="text",
-            placeholder="Search …",
-            name="search"
-          )
-          button.btn.btn-secondary(aria-label="Search", type="submit")
-            i.bi-search(aria-hidden="true")
+      .search-box
+        input.p-1.mt-1.border-0.rounded.me-1(
+          type="text",
+          placeholder="Search …",
+          name="search"
+        )
+        button.btn.btn-secondary(aria-label="Search", type="submit")
+          i.bi-search(aria-hidden="true")
