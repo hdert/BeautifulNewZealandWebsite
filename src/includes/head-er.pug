@@ -15,7 +15,7 @@ mixin header(activePage)
       rel="stylesheet"
     )
     link(href="../img/favicon.png", rel="shortcut icon")
-  body
+  body.col-xl-8
     header.animheader
       a(href="index.pug")
         img.logo(src="../img/NewZealandLogo.png", alt="New Zealand logo")
@@ -26,7 +26,7 @@ mixin header(activePage)
         height="306"
       )
 
-    nav.container-fluid.navbar.navbar-expand-xxl.d-flex.justify-content-between.align-items-center.navbar-dark
+    nav.container-fluid.navbar.navbar-expand-md.d-flex.justify-content-between.align-items-center.navbar-dark
       button.navbar-toggler(
         type="button",
         data-bs-toggle="collapse",
@@ -43,11 +43,11 @@ mixin header(activePage)
           +nav-link("#", activePage, "Mountains")
           +nav-link("icons", activePage, "Icons")
           +nav-link("contact", activePage, "Contact")
-      .search-box
-        input.p-1.mt-1.border-0.rounded.me-1(
+      .search-box.mw-100.d-flex.align-content-center
+        input.p-1.border-0.rounded.me-1.col-9(
           type="text",
           placeholder="Search …",
           name="search"
         )
-        button.btn.btn-secondary(aria-label="Search", type="submit")
+        button.btn.btn-secondary.col-3(aria-label="Search", type="submit")
           i.bi-search(aria-hidden="true")
