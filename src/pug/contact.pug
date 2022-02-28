@@ -4,5 +4,69 @@ html(lang="en")
 
   +header("contacts")
 
+  .container.mb-4.mt-2
+    h1 Contact Us
+    p Please leave us your comments or questions about Beautiful New Zealand.
+    .d-flex.justify-content-center
+      form.col-8
+        .mb-3.form-floating
+          input#firstname.form-control(
+            name="firstname",
+            type="text",
+            placeholder="Joe",
+            required
+          )
+          label.form-label(for="firstname") First Name
+        .mb-3.form-floating
+          input#lastname.form-control(
+            name="lastname",
+            type="text",
+            placeholder="Smith",
+            required
+          )
+          label.form-label(for="lastname") Last Name
+        .mb-3.form-floating
+          input#email.form-control(
+            name="email",
+            type="email",
+            placeholder="joesmith@example.com",
+            required
+          )
+          label.form-label(for="email") Email
+        .mb-3.form-floating
+          input#phonenum.form-control(
+            name="phonenum",
+            type="tel",
+            placeholder="027123456789"
+          )
+          label.form-label(for="phonenum") Phone Number
+        .mb-3.form-floating
+          input#dateofbirth.form-control(
+            name="dateofbirth",
+            type="date",
+            placeholder="2000-01-01"
+          )
+          label.form-label(for="dateofbirth") Date of Birth
+        .mb-3.form-floating 
+          textarea#message.form-control(
+            name="message",
+            type="text",
+            placeholder="Leave a comment here",
+            styles="height: 500px;"
+          )
+          label(for="message") Comments
+        .mb-3.form-check
+          input#agreetotos.form-check-input(
+            type="checkbox",
+            name="agreetotos",
+            required
+          )
+          label(for="agreetotos") I Agree to the Terms of Service
+        button.btn.btn-primary(
+          type="submit",
+          value="Submit",
+          onclick="formHandler();"
+        ) Submit
+
   include ../includes/footer.pug
   +footer
