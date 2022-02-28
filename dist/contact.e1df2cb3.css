@@ -1038,6 +1038,12 @@ textarea.form-control {
   text-align: center;
 }
 /* Helpers */
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
