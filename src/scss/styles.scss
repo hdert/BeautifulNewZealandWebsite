@@ -1,5 +1,20 @@
 @use "_modules/imports" as *;
 
+.carousel-item img {
+  object-fit: cover;
+  height: 45vh;
+  margin: auto;
+}
+
+.carousel-caption {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.533);
+}
+
+button.btn.p-0.border-0 {
+  width: calc(100% / 5);
+}
+
 .animheader {
   width: 100%;
   height: 306px;
